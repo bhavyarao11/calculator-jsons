@@ -1,0 +1,13 @@
+{
+  "title": "Protein Calculator",
+  "fields": [
+    {
+      "id": "weight",
+      "label": "Weight",
+      "unit": "kg",
+      "type": "number"
+    }
+  ],
+  "formula": "return weight * 2.2;",
+  "resultLabel": "Your Protein Intake (grams)"
+}
