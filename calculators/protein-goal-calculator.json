@@ -1,0 +1,100 @@
+{
+  "title": "Protein Calculator for Fitness Goals",
+  "resultLabel": "Recommended Protein Intake (grams)",
+  "unitToggle": true,
+  "fields": [
+    {
+      "id": "unit",
+      "label": "Preferred Unit",
+      "type": "select",
+      "options": [
+        { "label": "Imperial", "value": "imperial" },
+        { "label": "Metric", "value": "metric" }
+      ]
+    },
+    {
+      "id": "goal",
+      "label": "Primary Goal",
+      "type": "select",
+      "options": [
+        { "label": "Lose Fat", "value": "lose_fat" },
+        { "label": "Maintain", "value": "maintain" },
+        { "label": "Gain Muscle", "value": "gain_muscle" }
+      ]
+    },
+    {
+      "id": "age",
+      "label": "Age (Years)",
+      "type": "number"
+    },
+    {
+      "id": "weight",
+      "label": "Current Weight",
+      "type": "number"
+    },
+    {
+      "id": "height_ft",
+      "label": "Height (Feet)",
+      "type": "number",
+      "showIf": { "unit": "imperial" }
+    },
+    {
+      "id": "height_in",
+      "label": "Height (Inches)",
+      "type": "number",
+      "showIf": { "unit": "imperial" }
+    },
+    {
+      "id": "height_cm",
+      "label": "Height (cm)",
+      "type": "number",
+      "showIf": { "unit": "metric" }
+    },
+    {
+      "id": "resistance",
+      "label": "Resistance Training?",
+      "type": "select",
+      "options": [
+        { "label": "Yes", "value": "yes" },
+        { "label": "No", "value": "no" }
+      ]
+    },
+    {
+      "id": "activity",
+      "label": "Activity Level",
+      "type": "select",
+      "options": [
+        { "label": "Sedentary", "value": "sedentary" },
+        { "label": "Lightly Active", "value": "light" },
+        { "label": "Moderately Active", "value": "moderate" },
+        { "label": "Very Active", "value": "active" },
+        { "label": "Super Active", "value": "super_active" }
+      ]
+    }
+  ],
+  "formula": `
+    // Convert weight to kg if imperial
+    let weightKg = (unit === "imperial") ? weight * 0.453592 : weight;
+
+    // Determine multiplier
+    let goalMultiplier = {
+      lose_fat: 1.4,
+      maintain: 1.6,
+      gain_muscle: 1.8
+    }[goal] || 1.6;
+
+    let trainingBonus = resistance === "yes" ? 0.2 : 0;
+    let activityMultiplier = {
+      sedentary: 1.0,
+      light: 1.1,
+      moderate: 1.2,
+      active: 1.3,
+      super_active: 1.4
+    }[activity] || 1.1;
+
+    // Final protein recommendation in grams
+    let protein = weightKg * (goalMultiplier + trainingBonus) * activityMultiplier;
+
+    return Math.round(protein);
+  `
+}
