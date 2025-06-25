@@ -7,25 +7,25 @@
       "name": "diet",
       "type": "radio",
       "label": "Diet Type",
-      "options": ["vegetarian", "vegan", "dairy-free"]
+      "options": ["omnivore", "vegetarian", "vegan", "dairy-free"]
     },
     {
       "name": "history",
       "type": "radio",
       "label": "Family History of Bone Issues?",
-      "options": ["yes", "no"]
+      "options": ["Yes", "No"]
     },
     {
       "name": "medicine",
       "type": "radio",
       "label": "Currently Taking Bone-Affecting Medications?",
-      "options": ["yes", "no"]
+      "options": ["Yes", "No"]
     },
     {
       "name": "level",
       "type": "select",
       "label": "Activity Level",
-      "options": ["Low", "Light", "Moderate", "Active"]
+      "options": ["Sedentary: Little or no workout", "Light: 1 workout/week", "Moderate: 3-4 workouts/week", "Active: 5 workouts/week"]
     }
   ],
   "calculate": "calcium",
