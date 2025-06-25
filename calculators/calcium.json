@@ -29,8 +29,8 @@
     }
   ],
   "calculate": "calcium",
-"results": {
-  "calcium": "{{calcium}} mg/day",
+  "results": {
+  "calcium": "Your calcium need is {{calcium}} mg/day.",
   "summary": "{{summary}}",
   "tips": "{{tips}}"
 }
