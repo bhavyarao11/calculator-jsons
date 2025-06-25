@@ -1,0 +1,65 @@
+{
+  "id": "calorie-deficit",
+  "title": "Calorie Deficit Calculator for Women",
+  "fields": [
+    {
+      "name": "unit",
+      "type": "radio",
+      "label": "Unit",
+      "options": ["metric", "imperial"]
+    },
+    {
+      "name": "age_metric",
+      "type": "number",
+      "label": "Age (years)",
+      "unit": "metric"
+    },
+    {
+      "name": "weight_kgs",
+      "type": "number",
+      "label": "Weight (kg)",
+      "unit": "metric"
+    },
+    {
+      "name": "height_cm",
+      "type": "number",
+      "label": "Height (cm)",
+      "unit": "metric"
+    },
+    {
+      "name": "age_imperial",
+      "type": "number",
+      "label": "Age (years)",
+      "unit": "imperial"
+    },
+    {
+      "name": "weight_lbs",
+      "type": "number",
+      "label": "Weight (lbs)",
+      "unit": "imperial"
+    },
+    {
+      "name": "height_ft",
+      "type": "number",
+      "label": "Height (ft)",
+      "unit": "imperial"
+    },
+    {
+      "name": "height_in",
+      "type": "number",
+      "label": "Height (in)",
+      "unit": "imperial"
+    },
+    {
+      "name": "level",
+      "type": "select",
+      "label": "Activity Level",
+      "options": ["Sedentary", "Light", "Moderate", "Active"]
+    }
+  ],
+  "calculate": "calorie-deficit",
+  "results": {
+    "bmr": "Your Basal Metabolic Rate (BMR) is {{bmr}} Calories/day.",
+    "tdee": "Your Total Daily Energy Expenditure (TDEE) is {{tdee}} Calories/day."
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "calcium",
+  "title": "Calcium Intake Calculator for Women Over 40",
+  "fields": [
+    { "name": "age_calcium", "type": "number", "label": "Age (years)" },
+    {
+      "name": "diet",
+      "type": "radio",
+      "label": "Diet Type",
+      "options": ["vegetarian", "vegan", "dairy-free"]
+    },
+    {
+      "name": "history",
+      "type": "radio",
+      "label": "Family History of Bone Issues?",
+      "options": ["yes", "no"]
+    },
+    {
+      "name": "medicine",
+      "type": "radio",
+      "label": "Currently Taking Bone-Affecting Medications?",
+      "options": ["yes", "no"]
+    },
+    {
+      "name": "level",
+      "type": "select",
+      "label": "Activity Level",
+      "options": ["Low", "Light", "Moderate", "Active"]
+    }
+  ],
+  "calculate": "calcium",
+  "results": {
+    "calcium-intake": "{{calcium}} mg/day",
+    "calcium-intake-summary": "{{summary}}",
+    "calcium-intake-tips": "{{tips}}"
+  }
+}

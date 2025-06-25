@@ -1,0 +1,19 @@
+{
+  "title": "BMI Calculator for Women Over 40",
+  "fields": [
+    {
+      "name": "weight_kgs",
+      "label": "Weight (kg)",
+      "type": "number"
+    },
+    {
+      "name": "height_cm",
+      "label": "Height (cm)",
+      "type": "number"
+    }
+  ],
+  "calculate": "bmi",
+  "results": {
+    "bmi": "Your BMI is {{bmi}}"
+  }
+}
