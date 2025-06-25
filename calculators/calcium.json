@@ -29,9 +29,9 @@
     }
   ],
   "calculate": "calcium",
-  "results": {
-    "calcium-intake": "{{calcium}} mg/day",
-    "calcium-intake-summary": "{{summary}}",
-    "calcium-intake-tips": "{{tips}}"
-  }
+"results": {
+  "calcium": "{{calcium}} mg/day",
+  "summary": "{{summary}}",
+  "tips": "{{tips}}"
+}
 }
